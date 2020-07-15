@@ -252,17 +252,17 @@ h1{
 .divider{
     background-image: url("../img/header-nav/divider.svg");
 
-    .divider__line{
-        width: 2px;
-        height: 28px;
-        margin: auto;
-        margin-right: 20px;
-        margin-left: 20px;
-    }
-
     @media (min-width: $minWidthinMainLg){
             display: none;
     }
+}
+
+.divider__line{
+    width: 2px;
+    height: 28px;
+    margin: auto;
+    margin-right: 20px;
+    margin-left: 20px;
 }
 
 h1{
