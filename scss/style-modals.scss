@@ -1,0 +1,408 @@
+/* perem modal start */
+$fontFamilyMain: "TT Lakes Regular", Arial, sans-serif;
+$sideupColor: #e3e3e3;
+$sideupShadow: 16px 0px 52px rgba(14, 24, 80, 0.2), -2px 0px 4px rgba(69, 79, 126, 0.02);
+$inputColor: #B5B6BC;
+$maxMobileWidth: 320px;
+$maxWidth501: 501px;
+$minWidth502: 502px;
+$minWidth415: 415px;
+$maxWidthMd: 767px;
+$minWidthLg: 1020px;
+$fielsTextInfo: #7E7E82;
+$backgroundColor: #fff;
+$solidVolor: #eaeaea;
+$hoverShadow: 0 0 10px rgba(0, 0, 0, 0.3);
+$secondHoverShadow: 0 0 10px rgba(0, 0, 0, 0.5);
+$mainMpdalColor: #FF3E79;
+$secondMainColor: #fd1b60;
+$modalColorText: #fff;
+$h1MainColor: #1B1C21; 
+/* perem modal end */
+
+.popup{
+    &__animation{
+    &--hidden{
+        animation-name: popup-hidden;
+        animation-duration: 1s;
+        animation-fill-mode: forwards;
+    }
+    &--show{
+        animation-name: popup-show;
+        animation-duration: 500ms;
+        animation-fill-mode: forwards;
+    }
+    }
+}
+
+@keyframes popup-hidden {
+    0%{
+        transform: translateX(0vw);
+    }
+    100%{
+        transform: translateX(125vw);
+    }
+}
+
+@keyframes popup-show {
+    0%{
+        transform: translateX(125vw);
+    }
+    100%{
+        transform: translateX(0vw);
+    }
+}
+
+.side-up{
+    height: 100vh;
+    min-height: 568px;
+    max-width: 440px;
+    position: fixed;
+    background: $sideupColor;
+    padding: 0 32px;
+    cursor: default;
+    top: 0;
+    right: 0;
+    box-shadow: $sideupShadow;
+}
+
+.feedback {
+    z-index: 1;
+    &__form {
+    display: flex;
+    flex-direction: column;
+    margin-top: 20px;
+
+    &--text-info{
+        font-family: $fontFamilyMain;
+        font-size: 14px;
+        line-height: 16px;
+        color: $fielsTextInfo;
+        margin-bottom: 16px;
+    }
+
+    &--field{
+     background: $backgroundColor;
+     border: 1px solid $solidVolor;
+     border-radius: 8px;
+     margin-bottom: 16px;
+     padding: 12px 16px;
+     transition-duration: 1s;
+        
+        &:hover{
+            box-shadow: $hoverShadow;
+            transition-duration: 500ms;
+        }
+    }
+    
+    &--link{
+        text-decoration: none;
+        color: $mainMpdalColor;
+
+        &:hover{
+            text-decoration: underline;
+            color: $mainMpdalColor;
+        }
+    }
+    &--button{
+        background: $mainMpdalColor;
+        width: 136px;
+        height: 32px;
+        display: flex;
+        justify-content: space-around;
+        border-radius: 16px;
+        color: $modalColorText;
+        cursor: pointer;
+        position: relative;
+        align-self: flex-end;
+        transition-duration: 1s;
+
+        span{
+            display: inline-flex;
+            align-items: center;
+        }
+        
+        &:hover{
+            background-color: $secondMainColor;
+            box-shadow: $secondHoverShadow;
+            outline: none;
+            transition-duration: 1s;
+
+                .feedback__form--img{
+                    transform: rotate(180deg);
+                    transition-duration: 1s;
+                }
+        }
+
+        &--img{
+            transition-duration: 1s;
+        }
+    }
+
+    @media (max-width: $maxMobileWidth){
+        margin-top: 10px;
+    }
+
+    @media (min-width: $minWidth415){
+            margin-top: 20px;
+            margin-bottom: 20px;
+    }
+
+    }
+    &__h1 {
+            display: flex;
+            margin-top: 40px;
+
+                &:before{
+                content: "";
+                background-image: url(../img/header-nav/highlight.svg);
+                position: absolute;
+                left: 0;
+                height: 40px;
+                width: 4px;
+            }
+    }
+    &__button {
+        top: 38px;
+        left: -64px;
+        position: absolute;
+    
+        @media (max-width: $maxMobileWidth){
+            top: 11px;
+            left: 11px;
+        }
+        @media (max-width: $maxWidth501){
+            top: 16px;
+            left: 16px;
+        }   
+    }
+}
+
+.callback{
+    z-index: 1;
+   
+    &__form {
+    display: flex;
+    flex-direction: column;
+    margin-top: 20px;
+
+    &--text-info{
+        font-family: $fontFamilyMain;
+        font-size: 14px;
+        line-height: 16px;
+        color: $fielsTextInfo;
+        margin-bottom: 16px;
+    }
+
+    &--field{
+     background: $backgroundColor;
+     border: 1px solid $solidVolor;
+     border-radius: 8px;
+     margin-bottom: 16px;
+     padding: 12px 16px;
+     transition-duration: 1s;
+        
+        &:hover{
+            box-shadow: $hoverShadow;
+            transition-duration: 500ms;
+        }
+    }
+    
+    &--link{
+        text-decoration: none;
+        color: $mainMpdalColor;
+
+        &:hover{
+            text-decoration: underline;
+            color: $mainMpdalColor;
+        }
+    }
+    &--button{
+        background: $mainMpdalColor;
+        width: 136px;
+        height: 32px;
+        display: flex;
+        justify-content: space-around;
+        border-radius: 16px;
+        color: $modalColorText;
+        cursor: pointer;
+        position: relative;
+        align-self: flex-end;
+        transition-duration: 1s;
+
+        span{
+            display: inline-flex;
+            align-items: center;
+        }
+        
+        &:hover{
+            background-color: $secondMainColor;
+            box-shadow: $secondHoverShadow;
+            outline: none;
+            transition-duration: 1s;
+
+                .feedback__form--img{
+                    transform: rotate(180deg);
+                    transition-duration: 1s;
+                }
+        }
+
+        &--img{
+            transition-duration: 1s;
+        }
+    }
+
+    @media (max-width: $maxMobileWidth){
+        margin-top: 10px;
+    }
+
+    @media (min-width: $minWidth415){
+            margin-top: 20px;
+            margin-bottom: 20px;
+    }
+
+    }
+    &__h1{
+        display: flex;
+        margin-top: 40px;
+
+            &:before{
+                content: "";
+                background-image: url(../img/header-nav/highlight.svg);
+                position: absolute;
+                left: 0;
+                height: 40px;
+                width: 4px;
+            }
+    }
+    &__button {
+        top: 38px;
+        left: -64px;
+        position: absolute;
+    
+        @media (max-width: $maxMobileWidth){
+            top: 11px;
+            left: 11px;
+        }
+        @media (max-width: $maxWidth501){
+            top: 16px;
+            left: 16px;
+        }   
+    }
+}
+
+textarea{
+    &:-webkit-input-placeholder {
+        font-family: $fontFamilyMain;
+        color: $inputColor;
+        font-size: 16px;
+        line-height: 24px;
+        letter-spacing: -0.2px;
+    }
+}
+
+.input{
+    &:-webkit-input-placeholder{
+    font-family: $fontFamilyMain;
+    color: $inputColor;
+    font-size: 16px;
+    line-height: 24px;
+    letter-spacing: -0.2px;
+    }
+    .feedback__form{
+        &--field{
+            height: 36px;
+        }
+    }
+    .callback__form{
+        &--field{
+            height: 36px;
+        }
+    }
+}
+
+/* media 320 */
+@media (max-width: $maxMobileWidth){
+    .side-up{
+        padding: 0 16px;
+    }
+
+    h1.h1.feedback__h1, h1.h1.callback__h1{
+        display: flex;
+        margin-top: 60px;
+    }
+    .input{
+        .feedback__form{
+            &--field{
+                height: 15px;
+            }
+        }
+        .callback__form{
+            &--field{
+                height: 15px;
+            }
+        }
+    }
+}
+@media (max-width: $maxWidth501 ){
+
+    .side-up {
+        padding: 0 16px;
+    }
+    .feedback__h1, .callback__h1 {
+        margin-top: 78px;
+    }
+}
+/* media 481 */
+@media (min-width: $minWidth415){
+    .side-up{
+        padding: 0 32px;
+    }
+    .feedback__h1, .callback__h1{
+        margin-top: 40px;
+    }
+    .input{
+        .feedback__form{
+            &--field{
+                height: 36px;
+            }
+        }
+        .callback__form{
+            &--field{
+                height: 36px;
+            }
+        }
+    }
+}
+
+@media (min-width: $minWidth415) and (orientation: landscape){
+.side-up {
+    padding: 0 32px;
+    height: auto; 
+}
+}
+@media (min-width: $minWidthLg) and (orientation: landscape){
+    .side-up {
+        padding: 0 32px;
+        height: 100vh; 
+    }
+}
+@media (min-width: $minWidth502) and (max-width: $maxWidthMd){
+    .feedback__h1, .callback__h1{
+        margin-top: 40px;
+    }
+    .side-up {
+        height: auto;
+    }
+}
+
+/* уже есть в основном файле НЕ ДОБАВЛЯТЬ */
+h1 {
+    height: 40px;
+    font-size: 28px;
+    line-height: 40px;
+    letter-spacing: -0.6px;
+    font-family: $fontFamilyMain;
+    font-weight: bold;
+    color: $h1MainColor;
+}
