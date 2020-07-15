@@ -17,19 +17,20 @@ const modalFunctions = () => {
     
     /* all close buttons */
     const closeButtons = document.querySelectorAll('.info-button.info-button--close');
-    
-    const mobileMenuFlag = false;
+
+    /* button mobile menu active */
+    let mobileMenuFlag = false;
     
     /* modal Open function */ 
     function openModal(form) {
-        form.classList.toggle('popup__animation--hidden');
-        form.classList.toggle('popup__animation--show');
-        containerBody.classList.toggle('blure-on');
-        containerBody.classList.toggle('blure-off');
+        form.classList.remove('popup__animation--hidden');
+        form.classList.add('popup__animation--show');
+        containerBody.classList.add('blure-on');
+        containerBody.classList.remove('blure-off');
     
         if (form.classList.contains('popup__animation--show') && window.matchMedia("(max-width: 768px)").matches) {
-            mobileOnlyMenu.classList.toggle('show-mobile-menu');
-            mobileOnlyMenu.classList.toggle('hidden-mobile-menu');
+            mobileOnlyMenu.classList.remove('show-mobile-menu');
+            mobileOnlyMenu.classList.add('hidden-mobile-menu');
         }
     }
     
@@ -37,10 +38,10 @@ const modalFunctions = () => {
     function closeModals(form, btn) {
             for (let i = 0; i < btn.length; i++){        
                 btn[i].addEventListener('click', function() {
-                    form.classList.toggle('popup__animation--hidden');
-                    form.classList.toggle('popup__animation--show');
-                    containerBody.classList.toggle('blure-on');
-                    containerBody.classList.toggle('blure-off');
+                    form.classList.add('popup__animation--hidden');
+                    form.classList.remove('popup__animation--show');
+                    containerBody.classList.remove('blure-on');
+                    containerBody.classList.add('blure-off');
                 });
             }
     } 
@@ -49,17 +50,17 @@ const modalFunctions = () => {
     function closeOnBlure (form) {
         if (form.classList.contains('popup__animation--show')) {
     
-            form.classList.toggle('popup__animation--hidden');
-            form.classList.toggle('popup__animation--show');
-            containerBody.classList.toggle('blure-off');
-            containerBody.classList.toggle('blure-on'); 
+            form.classList.add('popup__animation--hidden');
+            form.classList.remove('popup__animation--show');
+            containerBody.classList.add('blure-off');
+            containerBody.classList.remove('blure-on'); 
         } 
     }
     
     /* button mobile menu active */
-    
     menuButtonActive.addEventListener('click', function () {
         mobileMenuFlag = true;
+        //formActionFlag = true;
         mobileOnlyMenu.classList.toggle('hidden-mobile-menu');
         mobileOnlyMenu.classList.toggle('show-mobile-menu');
         
