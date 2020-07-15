@@ -159,15 +159,16 @@ h1 {
 
 .divider {
   background-image: url(./static/divider.svg); }
-  .divider .divider__line {
-    width: 2px;
-    height: 28px;
-    margin: auto;
-    margin-right: 20px;
-    margin-left: 20px; }
   @media (min-width: 1020px) {
     .divider {
       display: none; } }
+
+.divider__line {
+  width: 2px;
+  height: 28px;
+  margin: auto;
+  margin-right: 20px;
+  margin-left: 20px; }
 
 h1 {
   height: 40px;
